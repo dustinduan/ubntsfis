@@ -1,14 +1,9 @@
 import os
 import platform as pl
-def screen_clean():
-    if 'window' in pl.platform():
-        os.system("cls")
-    else:
-        os.system("clear screen")
-def str_search(path=''):
+def str_search():
     str_tar=input("请输入需要搜索的特征信息:")
-    screen_clean()
-    for x in os.listdir(path):
+    os.system("cls")
+    for x in os.listdir():
         with open(x,"r") as f:
             i=0
             for each_line in f and i==0:
