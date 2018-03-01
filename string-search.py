@@ -1,4 +1,14 @@
 import os
+import platform as pl
+import time
+def clean_screen():
+	if 'Windows' in pl.platform():
+		os.system("cls")
+	else:
+		os.system("clear screen")
+def delay():
+	time.sleep(3)
+	clean_screen()
 def str_search():
 	filelist=os.listdir()
 	str_tar=input("Please input the searching string:")
@@ -9,4 +19,6 @@ def str_search():
 					if str_tar in each_line:
 						print(x)
 						break
-str_search()
+while True:
+	str_search()
+	delay()
