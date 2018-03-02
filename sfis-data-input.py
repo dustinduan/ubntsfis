@@ -25,12 +25,16 @@ def config_update(file="wo-config.cfg"):
     clean_screen()
     return (info)
 def sfis_write(inf,file="sfis.txt"):
-    sn="MAC:"+input("请输入需要记录的产品条码:").upper()+' '
+    sn=input("请输入需要记录的产品条码:").upper()+' '
     with open(file,"a") as f:
-        f.write(inf+' '+sn+sfis_time())
+        f.write(inf+' MAC:'+sn+sfis_time())
         clean_screen()
-    print("sfis记录OK")
-    time.sleep(1.5)
+    with open(file,"r") as f:
+        for each_line in f:
+            if sn.strip(' ') in each_line:
+                print(each_line)
+    print("sfis记录ok")
+    n=input("Please Press Any Key To Continue......")
     clean_screen()
 wo_info=config_update()
 while True:
