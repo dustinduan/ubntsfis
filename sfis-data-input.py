@@ -10,6 +10,8 @@ def sfis_time():
     return ("Date:"+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+'\n')
 def config_update(file="wo-config.cfg"):
     if os.path.exists(file):
+        with open(file,"r") as wo_info:
+            print(wo_info.readline())
         choice=input("请确认是否需要设置新的工单信息:(Y/N)").upper()
         if choice=="Y":
             info="Info:"+input("请输入需要会记录的信息:")
