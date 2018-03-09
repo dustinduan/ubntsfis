@@ -8,7 +8,7 @@ def clean_screen():
         os.system("clear screen")
 def sfis_time():
     return ("Date:"+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+'\n')
-def config_update(file="//10.6.1.14/公用Public/public/wo-config.cfg"):
+def config_update(file="wo-config.cfg"):
     if os.path.exists(file):
         with open(file,"r") as wo_info:
             print(wo_info.readline())
@@ -25,9 +25,9 @@ def config_update(file="//10.6.1.14/公用Public/public/wo-config.cfg"):
         with open(file,"w") as f:
             f.write(info)
     clean_screen()
-    print(info)
+    print(inf)
     return (info)
-def sfis_write(inf,file="//10.6.1.14/公用Public/public/sfis.txt"):
+def sfis_write(inf,file="sfis.txt"):
     sn=input("请输入需要记录的产品条码:").upper()+' '
     with open(file,"a") as f:
         f.write(inf+' MAC:'+sn+sfis_time())
