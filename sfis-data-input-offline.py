@@ -25,7 +25,7 @@ def config_update(file="wo-config.cfg"):
         with open(file,"w") as f:
             f.write(info)
     clean_screen()
-    print(inf)
+    print(info)
     return (info)
 def sfis_write(inf,file="sfis.txt"):
     sn=input("请输入需要记录的产品条码:").upper()+' '
